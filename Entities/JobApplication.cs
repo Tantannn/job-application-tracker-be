@@ -2,17 +2,17 @@
 
 namespace JobTracker.API.Entities;
 
-public abstract class JobApplication
+public class JobApplication
 {
-    public int Id { get; set; }
-    public int UserId { get; set; }
-    public string Company { get; set; } = string.Empty;
-    public string Role { get; set; } = string.Empty;
-    public ApplicationStatus Status { get; set; } = ApplicationStatus.Applied;
-    public DateTime AppliedDate { get; set; }
-    public string? Notes { get; set; }
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+  public int Id { get; set; }
+  public int UserId { get; set; }
+  public string Company { get; set; } = string.Empty;
+  public string Role { get; set; } = string.Empty;
+  public ApplicationStatus Status { get; set; } = ApplicationStatus.Applied;
+  public DateTime AppliedDate { get; set; }
+  public string? Notes { get; set; }
+  public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+  public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    public User User { get; set; } = null!;
+  public User User { get; set; } = null!;
 }
