@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.OAuth;
-using Microsoft.AspNetCore.Identity.Data;
+﻿using JobTracker.API.DTOs.Auth;
+using LoginRequest = Microsoft.AspNetCore.Identity.Data.LoginRequest;
+using RegisterRequest = Microsoft.AspNetCore.Identity.Data.RegisterRequest;
 
 namespace JobTracker.API.Services.Interfaces;
 
 public interface IAuthService
 {
-  Task<OAuthTokenResponse> RegisterAsync(RegisterRequest request);
-  Task<OAuthTokenResponse> LoginAsync(LoginRequest request);
+  Task<AuthResponse> RegisterAsync(RegisterRequest request);
+  Task<AuthResponse> LoginAsync(LoginRequest request);
 }
