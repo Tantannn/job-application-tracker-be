@@ -2,11 +2,8 @@
 using JobTracker.API.Entities;
 using JobTracker.API.Repositories.Interfaces;
 using JobTracker.API.Services.Interfaces;
-using LoginRequest = Microsoft.AspNetCore.Identity.Data.LoginRequest;
-using RegisterRequest = Microsoft.AspNetCore.Identity.Data.RegisterRequest;
 
 namespace JobTracker.API.Services;
-
 
 public class AuthService(
     IUserRepository userRepo,
@@ -17,7 +14,7 @@ public class AuthService(
         if (await userRepo.ExistsAsync(request.Email))
             throw new InvalidOperationException("Email already registered.");
 
-        var user = new User()
+        var user = new User
         {
             Email = request.Email,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password)
