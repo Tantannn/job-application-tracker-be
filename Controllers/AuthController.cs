@@ -22,3 +22,4 @@ public class AuthController(IAuthService authService) : ControllerBase
         return Ok(response);
     }
 }
+
